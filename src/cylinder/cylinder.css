@@ -1,0 +1,7 @@
+.cylinder {
+    /* whatever values/units you want */
+    border-radius: 100% / 90px;
+    background: 
+      radial-gradient(50% 40px at 50% 40px, #0003 99.99%, #0000 0),
+      radial-gradient(50% 40px at 50% calc(100% - 40px), #fff3 99.99%, #0000 0),
+  }
