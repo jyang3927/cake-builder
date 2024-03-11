@@ -28,7 +28,7 @@ export function MainPage(){
                 <div className="LayersDiv">
                     <CakeBuilder addLayer = {addLayer}/>
                 </div>
-                <div className="CakeDiv">{layers.map(layer => layer.color)}</div>
+                <div className="CakeDiv"><AllLayers/></div>
             </div>
         </div>
     )
