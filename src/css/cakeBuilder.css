@@ -1,168 +1,166 @@
 /* Main Page Component */
-.MainPage{
-    display: flex; 
-    flex-direction: column;
-    margin: 0;
-    align-items: center;
-    width: 100vw; 
-    height: 100vh; 
+.MainPage {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.BodyDiv{
-    display: flex; 
-    flex-direction: row;
-    width: 100%; 
-    height: 100%;
+.BodyDiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
 }
 
-.LayersDiv{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    border-right: 7px solid #85D0BC;
+.LayersDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  border-right: 7px solid #85d0bc;
 }
 
-.CakeDiv{
-    display: flex;
-    flex: 2;
-    width: 100%;
-    flex-direction: column-reverse;
-    align-items: center;
-    background-color: #B0E0D3;
-    background-image: linear-gradient(0deg, #F9CB99 0%, #B0E0D3 100%);
+.CakeDiv {
+  display: flex;
+  flex: 2;
+  width: 100%;
+  flex-direction: column-reverse;
+  align-items: center;
+  background-color: #b0e0d3;
+  background-image: linear-gradient(0deg, #f9cb99 0%, #b0e0d3 100%);
 }
 
-.CakeLayersDisplay{
-    margin: 10px; 
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
+.CakeLayersDisplay {
+  margin: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
 }
 
 /* HEADER COMPONENT */
-.Header{
-    font-family: "Madimi One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 70px;
-    color: #85D0BC;
-    margin: 5px;
-    text-align: center;
-    background-color: #FDFCEC;
-    width: 100%;
+.Header {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 70px;
+  color: #85d0bc;
+  margin: 5px;
+  text-align: center;
+  background-color: #fdfcec;
+  width: 100%;
 }
 
 .HeaderDiv {
-    width: 100%;
-    margin: 0;
-    background-color: #FDFCEC;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 7px solid #85D0BC;
+  width: 100%;
+  margin: 0;
+  background-color: #fdfcec;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 7px solid #85d0bc;
 }
 
 /* Cake Image */
 .CakeImg {
-    height: 80px;
-    width: auto;
-    margin: 0 30px;
+  height: 80px;
+  width: auto;
+  margin: 0 30px;
 }
 
 /* CAKE BUILDER COMPONENT */
-.CakeBuild{
-    display: flex;
-    width: 100%;
-    justify-content: center;
+.CakeBuild {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 /* ADD LAYER COMPONENT */
-.LayerAdd{
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    align-items: center;
+.LayerAdd {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 }
-
 
 /* LAYER FORM COMPONENT */
 .LayerForm {
-    display: flex;
-    width: 80%;
-    justify-content: center;
+  display: flex;
+  width: 80%;
+  justify-content: center;
 }
-.AddLayerBtn{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 350px;
-    border: 4px solid #fba289;
-    font-size: 25px; 
-    margin: 10px;
-    border-radius: 15px;
-    font-family: "Madimi One", sans-serif;
-    background-color: #FFA99F;
-    color: #FDFCEC;
-    margin: 10px 0;
-}
-
-.AddLayerForm{
-    border: 2px solid #85D0BC;
-    width: 100%;
-    border-radius: 15px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #85D0BC;
-    font-family: "Madimi One", sans-serif;
-    background-color: #FDFCEC;
+.AddLayerBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 350px;
+  border: 4px solid #fba289;
+  font-size: 25px;
+  margin: 10px;
+  border-radius: 15px;
+  font-family: "Madimi One", sans-serif;
+  background-color: #ffa99f;
+  color: #fdfcec;
+  margin: 10px 0;
 }
 
-.FormButton{
-    width: 150px;
-    background-color: #85D0BC;
-    color: #FDFCEC;
-    border: 2px solid #B0E0D3;
-    border-radius: 5px;
-    font-size: 17px;
-    font-family: "Madimi One", sans-serif;
-    margin: 0px 5px;
+.AddLayerForm {
+  border: 2px solid #85d0bc;
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #85d0bc;
+  font-family: "Madimi One", sans-serif;
+  background-color: #fdfcec;
 }
-.InputDiv{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
 
+.FormButton {
+  width: 150px;
+  background-color: #85d0bc;
+  color: #fdfcec;
+  border: 2px solid #b0e0d3;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: "Madimi One", sans-serif;
+  margin: 0px 5px;
+}
+.InputDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .Inputs {
-    margin: 5px;
+  margin: 5px;
 }
 
-input{
-    border: 1px solid #85D0BC;
-    border-radius: 5px;
-    height: 25px;
-    color:#85D0BC; 
-    font-size: 15px;
-    width: 50px;
+input {
+  border: 1px solid #85d0bc;
+  border-radius: 5px;
+  height: 25px;
+  color: #85d0bc;
+  font-size: 15px;
+  width: 50px;
 }
 
-.FormButtons{
-    display: flex;
-    flex-direction: row;
-    margin-top: 5px;
+.FormButtons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
 }
