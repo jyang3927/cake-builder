@@ -1,0 +1,28 @@
+body {
+    background: repeating-linear-gradient(45deg, #279ba0, #35d3da 100px, #279ba0 200px);
+    padding: 40px 10px;
+  }
+  
+main {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 500px;
+    margin: 10px auto;
+  }
+  
+.layer {
+    position: relative;
+    background-color: chocolate;
+    border-bottom: 2px solid rgba(100, 100, 100, .3);
+  }
+  
+.top {
+    border-bottom: 2px solid rgba(100, 100, 100, .3);
+    border-radius: 50%;
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
