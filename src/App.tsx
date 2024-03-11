@@ -1,15 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import CylinderInputs from './components/CylinderInputs';
-import SingleCylinder from './components/SingleLayer';
-import SampleCake from './components/SampleCake';
-import AllLayers from './components/AllLayers';
+import { MainPage } from './components/MainPage';
 
 function App() {
   return (
-    <div>
-      <AllLayers></AllLayers>
+    <div className="App">
+      <MainPage/>
     </div>
   );
 }
