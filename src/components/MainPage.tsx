@@ -5,8 +5,6 @@ import { LayerAdd } from "./LayerAdd";
 import { LayerForm } from "./LayerForm";
 import { Header } from "./Header";
 import SingleCylinder from './SingleLayer';
-import SampleCake from './SampleCake';
-import AllLayers from './AllLayers';
 import '../css/cakeBuilder.css'
 import SingleLayer from "./SingleLayer";
 
