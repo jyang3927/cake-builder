@@ -1,15 +1,15 @@
-body {
+.body {
     background: repeating-linear-gradient(45deg, #279ba0, #35d3da 100px, #279ba0 200px);
     padding: 40px 10px;
   }
   
-main {
+/* .CakeDiv {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     width: 500px;
     margin: 10px auto;
-  }
+  } */
   
 .layer {
     position: relative;

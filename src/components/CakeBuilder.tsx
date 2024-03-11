@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Layer } from "../models/Layer";
 import { LayerForm } from "./LayerForm";
 import { LayerAdd } from "./LayerAdd";
-import '../styles/cakeBuilder.css'
+import '../css/cakeBuilder.css'
 
 interface CakeBuilderProps {
     addLayer: (layer:Layer) => void; 

@@ -7,7 +7,8 @@ import { Header } from "./Header";
 import SingleCylinder from './SingleLayer';
 import SampleCake from './SampleCake';
 import AllLayers from './AllLayers';
-import '../styles/cakeBuilder.css'
+import '../css/cakeBuilder.css'
+import SingleLayer from "./SingleLayer";
 
 export function MainPage(){
     const [layers, setLayers] = useState<Layer[]>([]); 
@@ -18,7 +19,6 @@ export function MainPage(){
     //use state for all layers should go here
     return(
         <div className="MainPage">
-            <AllLayers></AllLayers>
             <div className="HeaderDiv">
                 <img className="CakeImg" src="img/cake-svgrepo-com.svg"/>
                 <Header/>
@@ -28,7 +28,9 @@ export function MainPage(){
                 <div className="LayersDiv">
                     <CakeBuilder addLayer = {addLayer}/>
                 </div>
-                <div className="CakeDiv"><AllLayers/></div>
+                <div className="CakeDiv">
+                    <div className="CakeLayersDisplay">{layers.map(layer => <SingleLayer layer={layer}/>)}</div>
+                </div>
             </div>
         </div>
     )
