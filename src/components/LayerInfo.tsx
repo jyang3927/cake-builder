@@ -14,6 +14,15 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
   setLayers,
 }) => {
   const updateLayer = (index: number, updatedLayer: Layer) => {
+    if (index > 0 && updatedLayer.width > layers[index - 1].width) {
+      return;
+    }
+    for (let i = index + 1; i < layers.length; i++) {
+      if (updatedLayer.width < layers[i].width) {
+        return;
+      }
+    }
+
     const newLayers = [...layers];
     newLayers[index] = updatedLayer;
     setLayers(newLayers);
@@ -23,7 +32,6 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
     <div>
       {layers.map((layer, index) => (
         <div key={layer.id || index} className="layer-info">
-          <SingleLayer layer={layer} />
           <div className="layer-edit">
             <label>
               Width (%):
