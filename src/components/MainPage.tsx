@@ -10,6 +10,7 @@ import SingleLayer from "./SingleLayer";
 
 export function MainPage(){
     const [layers, setLayers] = useState<Layer[]>([]); 
+
     //function that handles adding to use state of array -- this is the function that will pass down to cakebuilder
     function addLayer(layer:Layer){
         setLayers([...layers, layer]);
@@ -19,12 +20,12 @@ export function MainPage(){
         <div className="MainPage">
             <div className="HeaderDiv">
                 <img className="CakeImg" src="img/cake-svgrepo-com.svg"/>
-                <Header/>
+                <Header/> 
                 <img className="CakeImg" src="img/cake-svgrepo-com.svg"/>
             </div>
             <div className="BodyDiv">
                 <div className="LayersDiv">
-                    <CakeBuilder addLayer = {addLayer}/>
+                    <CakeBuilder addLayer = {addLayer} cakeLayers = {layers}/>
                 </div>
                 <div className="CakeDiv">
                     <div className="CakeLayersDisplay">{layers.map(layer => <SingleLayer layer={layer}/>)}</div>
