@@ -13,16 +13,22 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
   layers,
   setLayers,
 }) => {
-  const updateLayer = (index: number, updatedLayer: Layer) => {
-    if (index > 0 && updatedLayer.width > layers[index - 1].width) {
+  const updateWidth = (index: number, width: number) => {
+    if (index > 0 && width > layers[index - 1].width) {
       return;
     }
     for (let i = index + 1; i < layers.length; i++) {
-      if (updatedLayer.width < layers[i].width) {
+      if (width < layers[i].width) {
         return;
       }
     }
-
+    const updatedLayer = { ...layers[index], width };
+    const newLayers = [...layers];
+    newLayers[index] = updatedLayer;
+    setLayers(newLayers);
+  };
+  const updateHeight = (index: number, height: number) => {
+    const updatedLayer = { ...layers[index], height };
     const newLayers = [...layers];
     newLayers[index] = updatedLayer;
     setLayers(newLayers);
@@ -32,51 +38,31 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
     <div>
       {layers.map((layer, index) => (
         <div key={layer.id || index} className="layer-info">
+          <SingleLayer layer={layer} />
           <div className="layer-edit">
             <label>
-              Width (%):
+              Width ( {layer.width}%):
               <input
                 type="range"
                 min="1"
                 max="100"
                 value={layer.width}
                 onChange={(e) =>
-                  updateLayer(index, {
-                    ...layer,
-                    width: parseInt(e.target.value, 10),
-                  })
+                  updateWidth(index, parseInt(e.target.value, 10))
                 }
-              />
+              />{" "}
             </label>
             <label>
-              Height (px):
+              Height ({layer.height}px):
               <input
                 type="range"
                 min="20"
                 max="200"
                 value={layer.height}
                 onChange={(e) =>
-                  updateLayer(index, {
-                    ...layer,
-                    height: parseInt(e.target.value, 10),
-                  })
+                  updateHeight(index, parseInt(e.target.value, 10))
                 }
-              />
-            </label>
-            <label>
-              Color:
-              <select
-                value={layer.color}
-                onChange={(e) =>
-                  updateLayer(index, { ...layer, color: e.target.value })
-                }
-              >
-                {colorOptions.map((color, idx) => (
-                  <option key={idx} value={color}>
-                    {color}
-                  </option>
-                ))}
-              </select>
+              />{" "}
             </label>
           </div>
         </div>
