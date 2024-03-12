@@ -38,7 +38,6 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
     <div>
       {layers.map((layer, index) => (
         <div key={layer.id || index} className="layer-info">
-          <SingleLayer layer={layer} />
           <div className="layer-edit">
             <label>
               Width ( {layer.width}%):
