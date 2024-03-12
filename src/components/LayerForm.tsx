@@ -1,5 +1,4 @@
 import { FormEvent, useState } from "react";
-import { Colors } from "../enums/Colors";
 import { Layer } from "../models/Layer";
 import '../css/cakeBuilder.css'
 
