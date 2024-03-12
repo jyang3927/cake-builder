@@ -1,17 +1,16 @@
-import { useState } from "react";
 import { Layer } from "../models/Layer";
-import { LayerForm } from "./LayerForm";
 import { LayerAdd } from "./LayerAdd";
 import '../css/cakeBuilder.css'
 
 interface CakeBuilderProps {
     addLayer: (layer:Layer) => void; 
+    cakeLayers:Layer[];
 }
 
-export function CakeBuilder({addLayer}: CakeBuilderProps) {
+export function CakeBuilder({addLayer, cakeLayers}: CakeBuilderProps) {
     return(
         <div className="CakeBuild">
-            <LayerAdd addLayer = {addLayer}/>
+            <LayerAdd addLayer = {addLayer} cakeLayers={cakeLayers}/>
         </div>
     )
 }
