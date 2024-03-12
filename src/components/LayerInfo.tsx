@@ -1,10 +1,12 @@
 import React from "react";
 import { Layer } from "../models/Layer";
+import { MainPage } from "./MainPage";
 import SingleLayer from "./SingleLayer";
 
 interface LayerInfoProps {
   layers: Layer[];
   setLayers: React.Dispatch<React.SetStateAction<Layer[]>>;
+  removeLayer:(index:number) => void
 }
 
 const colorOptions = ["#FFD700", "#FF5733", "#33FF57", "#3357FF", "#8B00FF"];
@@ -12,6 +14,7 @@ const colorOptions = ["#FFD700", "#FF5733", "#33FF57", "#3357FF", "#8B00FF"];
 const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
   layers,
   setLayers,
+  removeLayer
 }) => {
   const updateLayer = (index: number, updatedLayer: Layer) => {
     if (index > 0 && updatedLayer.width > layers[index - 1].width) {
@@ -78,6 +81,7 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
                 ))}
               </select>
             </label>
+              <button onClick={() => removeLayer(index)} >Delete</button>
           </div>
         </div>
       ))}
