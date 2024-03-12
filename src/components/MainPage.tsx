@@ -12,6 +12,11 @@ export function MainPage() {
   function addLayer(layer: Layer) {
     setLayers([...layers, layer]);
   }
+
+  function removeLayer(index: number) {
+    setLayers([...layers.slice(0, index), ...layers.slice(index+1)])
+}
+
   //use state for all layers should go here
   return (
     <div className="MainPage">
@@ -24,7 +29,7 @@ export function MainPage() {
         <div className="LayersDiv">
           <CakeBuilder addLayer={addLayer} cakeLayers={layers} />
           <div className="LayerInfoDiv">
-            <LayerInfo layers={layers} setLayers={setLayers} />
+            <LayerInfo layers={layers} setLayers={setLayers} removeLayer={removeLayer} />
           </div>
         </div>
         <div className="CakeDiv">

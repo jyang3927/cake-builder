@@ -5,6 +5,7 @@ import '../css/cakeBuilder.css';
 interface LayerInfoProps {
   layers: Layer[];
   setLayers: React.Dispatch<React.SetStateAction<Layer[]>>;
+  removeLayer:(index:number) => void
 }
 
 const colorOptions = ["#FFD700", "#FF5733", "#33FF57", "#3357FF", "#8B00FF"];
@@ -12,6 +13,7 @@ const colorOptions = ["#FFD700", "#FF5733", "#33FF57", "#3357FF", "#8B00FF"];
 const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
   layers,
   setLayers,
+  removeLayer
 }) => {
   const updateLayer = (index: number, updatedLayer: Layer) => {
     if (index > 0 && updatedLayer.width > layers[index - 1].width) {
@@ -75,6 +77,7 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
               >
               </input>
             </label>
+              <button onClick={() => removeLayer(index)} >Delete</button>
           </div>
         </div>
       ))}
