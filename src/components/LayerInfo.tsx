@@ -37,7 +37,7 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
           <div className="layer-edit">
             <p className="LayerLabel">Layer {index + 1} </p>
             <label className="LabelBlue">
-              Width:
+              Width ({layer.width}in)
               <input
                 type="range"
                 min="1"
@@ -52,7 +52,7 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
               />
             </label>
             <label className="LabelBlue">
-              Height:
+              Height ({layer.height}in)
               <input
                 type="range"
                 min="20"
@@ -77,7 +77,7 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
               >
               </input>
             </label>
-              <button onClick={() => removeLayer(index)} >Delete</button>
+              <button className = "DeleteButton" onClick={() => removeLayer(index)} >Delete</button>
           </div>
         </div>
       ))}
