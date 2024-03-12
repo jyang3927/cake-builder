@@ -16,13 +16,24 @@ export function LayerForm ({onAddLayer, onDisplay, cakeLayers}: LayerFormProps )
 
     function handleSubmit(e:FormEvent){
         e.preventDefault(); 
-        onAddLayer({width: width, height: height, color: color});
+
+        let widthOfPreviousLayer = topMostLayerWidth(); 
+
+        if (!cakeLayers || width <= widthOfPreviousLayer){
+            onAddLayer({width: width, height: height, color: color});
+        }else {
+            alert('Please choose width greater than layer underneath')
+        }
         setWidth(0); 
         setHeight(0); 
         setColor('');
         onDisplay(false); 
     }
     
+    function topMostLayerWidth () {
+        //find width of top most layer and return
+        return cakeLayers[cakeLayers.length - 1]?.width ?? 500
+    }
 
     return(
         <div className="LayerForm">
@@ -30,11 +41,11 @@ export function LayerForm ({onAddLayer, onDisplay, cakeLayers}: LayerFormProps )
                 <div className="InputDiv">
                     <div className="Inputs">
                         <label htmlFor="height">Height   </label>
-                        <input id="height" name="height" type="number" min="0" value={height} onChange={(e) => setHeight(Number(e.target.value))}/>
+                        <input id="height" name="height" type="number" min="1" value={height} onChange={(e) => setHeight(Number(e.target.value))}/>
                     </div>
                     <div className="Inputs">
                         <label htmlFor="width">Width   </label>
-                        <input id="width" name="width" type="number" min="0" value={width} onChange={(e) => setWidth(Number(e.target.value))}/>
+                        <input id="width" name="width" type="number" min="1" value={width} onChange={(e) => setWidth(Number(e.target.value))}/>
                     </div>
                     <div className="Inputs">
                         <label htmlFor="color">Color   </label>

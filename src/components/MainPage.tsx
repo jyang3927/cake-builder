@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { Layer } from "../models/Layer";
 import { CakeBuilder } from "./CakeBuilder";
-import { LayerAdd } from "./LayerAdd";
-import { LayerForm } from "./LayerForm";
 import { Header } from "./Header";
-import SingleCylinder from './SingleLayer';
 import '../css/cakeBuilder.css'
 import SingleLayer from "./SingleLayer";
 import LayerInfo from "./LayerInfo";
@@ -25,16 +22,14 @@ export function MainPage() {
       </div>
       <div className="BodyDiv">
         <div className="LayersDiv">
-          <CakeBuilder addLayer={addLayer} />
+          <CakeBuilder addLayer={addLayer} cakeLayers={layers} />
           <div className="LayerInfoDiv">
             <LayerInfo layers={layers} setLayers={setLayers} />
           </div>
         </div>
         <div className="CakeDiv">
           <div className="CakeLayersDisplay">
-            {layers.map((layer) => (
-              <SingleLayer layer={layer} />
-            ))}
+            {layers.map((layer) => (<SingleLayer layer={layer} />))}
           </div>
         </div>
       </div>

@@ -18,11 +18,13 @@
 .LayersDiv {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   flex: 1;
   height: 100%;
   width: 100%;
   border-right: 7px solid #85d0bc;
+  background-color: #FDFCEC;
 }
 
 .CakeDiv {
@@ -51,7 +53,7 @@
   font-weight: 400;
   font-style: normal;
   font-size: 70px;
-  color: #85d0bc;
+  color: #fa8b7f;
   margin: 5px;
   text-align: center;
   background-color: #fdfcec;
@@ -116,7 +118,7 @@
 }
 
 .AddLayerForm {
-  border: 2px solid #85d0bc;
+  border: 3px solid #ecab66;
   width: 100%;
   border-radius: 15px;
   padding: 10px;
@@ -124,16 +126,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #85d0bc;
+  color: #f1b97c;
   font-family: "Madimi One", sans-serif;
   background-color: #fdfcec;
 }
 
 .FormButton {
   width: 150px;
-  background-color: #85d0bc;
+  background-color: #f1b97c;
   color: #fdfcec;
-  border: 2px solid #b0e0d3;
+  border: 3px solid #ecab66;
   border-radius: 5px;
   font-size: 17px;
   font-family: "Madimi One", sans-serif;
@@ -148,13 +150,14 @@
 }
 .Inputs {
   margin: 5px;
+  font-size: 17px;
 }
 
 input {
-  border: 1px solid #85d0bc;
+  border: 1px solid #ecab66;
   border-radius: 5px;
   height: 25px;
-  color: #85d0bc;
+  color: #f1b97c;
   font-size: 15px;
   width: 50px;
 }
@@ -163,4 +166,46 @@ input {
   display: flex;
   flex-direction: row;
   margin-top: 5px;
+}
+
+
+/* LAYER INFO */
+.LayerInfoDiv{
+  border: 4px solid #85d0bc;
+  border-radius: 15px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #b0e0d3;
+  margin: 10px;
+}
+
+.layer-edit{
+  color: #85d0bc;
+  font-family: "Madimi One", sans-serif;
+  border: 3px solid #85d0bc;
+  width: 93%;
+  height: 90px;
+  padding: 0;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: #FDFCEC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LayerLabel{
+  margin: 5px;
+  font-size: 25px;
+}
+
+.BorderBlue {
+  border: 1px solid #85d0bc
+}
+
+.LabelBlue {
+  font-size: 17px;
 }
