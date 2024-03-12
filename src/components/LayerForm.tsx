@@ -5,43 +5,47 @@ import '../css/cakeBuilder.css'
 
 interface LayerFormProps {
     onAddLayer: (layer:Layer) => void; 
+    onDisplay: (isVisible:boolean) => void; 
+    cakeLayers: Layer[];
 }
 
-export function LayerForm ({onAddLayer}: LayerFormProps) {
+export function LayerForm ({onAddLayer, onDisplay, cakeLayers}: LayerFormProps ) {
     const [width, setWidth] = useState<number>(0); 
     const [height, setHeight] = useState<number>(0); 
     const [color, setColor] = useState<string>(''); 
 
-    const [isdisplay, setIsDisplay] = useState<boolean>(true); 
-
-    function displayFlex () {
-        isdisplay === true ? setIsDisplay(false) : setIsDisplay(true)
-    }
-
     function handleSubmit(e:FormEvent){
         e.preventDefault(); 
 
-        onAddLayer({width: width, height: height, color: color})
+        let widthOfPreviousLayer = topMostLayerWidth(); 
+
+        if (!cakeLayers || width <= widthOfPreviousLayer){
+            onAddLayer({width: width, height: height, color: color});
+        }else {
+            alert('Please choose width greater than layer underneath')
+        }
         setWidth(0); 
         setHeight(0); 
         setColor('');
+        onDisplay(false); 
     }
     
-    const displayStyle = {
-        display: isdisplay ? 'flex' : 'none'
+    function topMostLayerWidth () {
+        //find width of top most layer and return
+        return cakeLayers[cakeLayers.length - 1]?.width ?? 500
     }
 
     return(
-        <div className="LayerForm" style={displayStyle}>
+        <div className="LayerForm">
             <form className="AddLayerForm" onSubmit={handleSubmit}>
                 <div className="InputDiv">
                     <div className="Inputs">
                         <label htmlFor="height">Height   </label>
-                        <input id="height" name="height" type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))}/>
+                        <input id="height" name="height" type="number" min="1" value={height} onChange={(e) => setHeight(Number(e.target.value))}/>
                     </div>
                     <div className="Inputs">
                         <label htmlFor="width">Width   </label>
-                        <input id="width" name="width" type="number" value={width} onChange={(e) => setWidth(Number(e.target.value))}/>
+                        <input id="width" name="width" type="number" min="1" value={width} onChange={(e) => setWidth(Number(e.target.value))}/>
                     </div>
                     <div className="Inputs">
                         <label htmlFor="color">Color   </label>
@@ -50,7 +54,7 @@ export function LayerForm ({onAddLayer}: LayerFormProps) {
                 </div>
                 <div className="FormButtons">
                     <button className="FormButton" type="submit">Submit</button>
-                    <button className="FormButton" onClick={() => displayFlex()}>Delete</button>
+                    <button className="FormButton" onClick={() => onDisplay(false)}>Delete</button>
                 </div>
             </form>
 

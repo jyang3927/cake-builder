@@ -1,7 +1,6 @@
 import React from "react";
 import { Layer } from "../models/Layer";
-import { MainPage } from "./MainPage";
-import SingleLayer from "./SingleLayer";
+import '../css/cakeBuilder.css';
 
 interface LayerInfoProps {
   layers: Layer[];
@@ -32,12 +31,13 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
   };
 
   return (
-    <div>
+    <div className="LayerInfo">
       {layers.map((layer, index) => (
         <div key={layer.id || index} className="layer-info">
           <div className="layer-edit">
-            <label>
-              Width (%):
+            <p className="LayerLabel">Layer {index + 1} </p>
+            <label className="LabelBlue">
+              Width:
               <input
                 type="range"
                 min="1"
@@ -51,8 +51,8 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
                 }
               />
             </label>
-            <label>
-              Height (px):
+            <label className="LabelBlue">
+              Height:
               <input
                 type="range"
                 min="20"
@@ -66,20 +66,16 @@ const LayerInfo: React.FunctionComponent<LayerInfoProps> = ({
                 }
               />
             </label>
-            <label>
+            <label className="LabelBlue">
               Color:
-              <select
+              <input className="BorderBlue"
+                type="color"
                 value={layer.color}
                 onChange={(e) =>
                   updateLayer(index, { ...layer, color: e.target.value })
                 }
               >
-                {colorOptions.map((color, idx) => (
-                  <option key={idx} value={color}>
-                    {color}
-                  </option>
-                ))}
-              </select>
+              </input>
             </label>
               <button onClick={() => removeLayer(index)} >Delete</button>
           </div>
